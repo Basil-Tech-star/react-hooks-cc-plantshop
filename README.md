@@ -1,150 +1,161 @@
-# Phase 2 Code Challenge: Plantsy
+### Plantsy: 
+### A Plant Catalog App
+Plantsy is a simple React application that allows users to browse, add, update, search, and delete plants in a catalog. The app fetches plant data from a backend API and displays them in a list format. Users can update the price of plants, mark them as "sold out," and add new plants to the catalog.
 
-## Demo
+### Table of Contents
+1. Project Overview
+2. Features
+3. Installation Instructions
+4. App Structure
+5. Components
+   . App.js
+   .  Header.js
+   .  NewPlantForm.js
+   .  PlantCard.js
+   .  PlantList.js
+   .  PlantPage.js
+   .  Search.js
+   .  index.js
+6. API Endpoints
+7. Styling
+8. Contributing
+9. License
+### Project Overview
+Plantsy is a catalog app where users can view and manage a list of plants. The main features include:
 
-Use this gif as an example of how the app should work.
+  . Viewing Plants: Displays a list of plants fetched from a backend server.
+  .  Adding Plants: Users can add new plants to the catalog by submitting a form.
+  . Updating Plant Price: Users can update the price of plants in the catalog.
+  . Deleting Plants: Plants can be removed from the catalog.
+  . Searching: Users can search for plants by name.
+  . Sold Out Toggle: Users can toggle the availability of plants, marking them as "Sold Out" or "In Stock".
 
-![Demo GIF](https://curriculum-content.s3.amazonaws.com/phase-2/react-hooks-mock-code-challenge-plantshop/plantsy_demo.gif)
+The app is built with React, utilizing hooks such as useState and useEffect for state management and side effects.
 
-## Instructions
+## Features
+. Add a New Plant: Users can add a plant to the catalog with a name, image URL, and price.
+. Update Price: Users can update the price of any plant in the catalog.
+. Search Plants: Search plants by name as users type.
+. Mark Plants as Sold Out: Toggle the availability status of plants.
+. Delete Plants: Remove a plant from the catalog entirely.
+. Responsive Design: The app is mobile-friendly and works on various screen sizes.
+#### Installation Instructions
+### Prerequisites
+. Node.js: Ensure that Node.js is installed on your machine.
+. React: This app is built using React, so you will need to have React and its dependencies installed.
+### Steps
+## Clone the repository:
 
-Welcome to Plantsy! You've been tasked with building out some features for the
-admin side of a plant store. The designers have put together the components and
-CSS. Now it's up to you to bring the features to life by adding stateful logic
-as well as persisting data to the backend via our API.
 
-Your job will be to make our app work according to the user stories you will
-find the [Core Deliverables](#Core-Deliverables) section.
 
-## Setup
+git clone https://github.com/yourusername/plantsy.git
+Navigate into the project directory:
 
-1. Run `npm install` in your terminal.
-2. Run `npm run server`. This will run your backend on port `6001`.
-3. In a new terminal, run `npm start`.
 
-Make sure to open [http://localhost:6001/plants](http://localhost:6001/plants)
-in the browser to verify that your backend is working before you proceed!
+## cd plantsy
+Install the required dependencies:
 
-## Endpoints
 
-The base URL for your backend is: `http://localhost:6001`
+## npm install
+Start the app:
 
-## Core Deliverables
 
-As a user:
 
-1. When the app starts, I can see all plants.
-2. I can add a new plant to the page by submitting the form.
-3. I can mark a plant as "sold out".
-4. I can search for plants by their name and see a filtered list of plants.
+## npm start
+This will run the app on http://localhost:3000.
 
-### Endpoints for Core Deliverables
+## App Structure
 
-#### GET /plants
+/src
+  /components
+    App.js
+    Header.js
+    NewPlantForm.js
+    PlantCard.js
+    PlantList.js
+    PlantPage.js
+    Search.js
+  index.js
+  index.css
+#### Components
+### App.js
+App.js is the main component of the app. It manages the state for plants, search query, and loading status. It also handles the logic for fetching, adding, updating, and deleting plants.
 
-Example Response:
+## Key Features:
+State Management: Handles plants, searchQuery, and isLoading states.
+useEffect: Fetches plant data from the API when the component mounts.
+addPlant, updatePrice, deletePlant: Handles adding new plants, updating plant prices, and deleting plants via API requests.
+Filtering: Filters plants based on the search query.
+### Header.js
+Header.js is a simple functional component that displays the title of the app.
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Aloe",
-    "image": "./images/aloe.jpg",
-    "price": 15.99
-  },
-  {
-    "id": 2,
-    "name": "ZZ Plant",
-    "image": "./images/zz-plant.jpg",
-    "price": 25.98
-  }
-]
-```
+## Key Features:
+Displays "Plantsy" with a plant emoji logo.
+### NewPlantForm.js
+NewPlantForm.js provides a form for users to input new plant details, including the name, image URL, and price. Upon form submission, it sends a POST request to the backend to add the new plant.
 
-#### POST `/plants`
+## Key Features:
+Form Handling: Captures user input for name, image URL, and price.
+addPlant: Calls the addPlant function passed as a prop to add the new plant to the catalog.
+### PlantCard.js
+PlantCard.js displays individual plant details, including the name, price, and availability status. Users can update the price, toggle the "sold out" status, or delete the plant.
 
-Required Headers:
+## Key Features:
+Price Update: Allows users to update the price of a plant.
+Sold Out Toggle: Allows users to toggle the availability of a plant.
+Delete Button: Deletes the plant from the catalog.
+### PlantList.js
+PlantList.js renders a list of PlantCard components, passing down the necessary data and functions as props.
 
-```js
-{
-  "Content-Type": "application/json"
-}
-```
+## Key Features:
+Mapping Plants: Iterates over the plants array to display each plant in a PlantCard.
+### PlantPage.js
+PlantPage.js is the main content page of the app. It includes the NewPlantForm, the search bar, and the PlantList.
 
-Request Object:
+## Key Features:
+Loading State: Displays a "Loading..." message while the data is being fetched.
+Add Plant Form: Renders the form to add new plants.
+Search Bar: Renders the search bar to filter the plant list.
+### Search.js
+Search.js provides a search bar that allows users to search plants by name.
 
-```json
-{
-  "name": "string",
-  "image": "string",
-  "price": number
-}
-```
+## Key Features:
+Search Input: Captures the search query and filters the list of plants by name.
+Debounced Search: As the user types, the app immediately filters the plant list.
+### index.js
+index.js is the entry point for the app. It renders the root App component and attaches it to the DOM.
 
-Example Response:
+### API Endpoints
+The app interacts with a backend API at http://localhost:6001/plants to perform CRUD operations.
 
-```json
-{
-  "id": 1,
-  "name": "Aloe",
-  "image": "./images/aloe.jpg",
-  "price": 15.99
-}
-```
+GET /plants: Fetches a list of all plants.
+POST /plants: Adds a new plant to the catalog.
+PATCH /plants/:id: Updates the price of a plant by its ID.
+DELETE /plants/:id: Deletes a plant by its ID.
+Styling
+The app uses basic CSS for styling. You can modify the index.css file to adjust the look and feel of the app. The components make use of simple class names for styling.
 
-## Advanced Deliverables
+### Contributing
+If you would like to contribute to this project, follow these steps:
 
-These deliverables are not required to pass the code challenge, but if you have
-the extra time, or even after the code challenge, they are a great way to
-stretch your skills.
+### Fork the repository.
+Create a new branch (git checkout -b feature-name).
+Make your changes.
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature-name).
+Create a pull request.
+### Technology used
+React
+Html
+Javascript
+Css
+Git
+Github
 
-You'll have to add additional elements for these features. Feel free to style
-them however you see fit!
+### Deployment Live Link
+https://react-hooks-cc-palantshop.netlify.app/
 
-> Note: If you are going to attempt these advanced deliverables, please be sure
-> to have a working commit with all the Core Deliverables first!
-
-As a user:
-
-1. I can update the price of a plant and still see the updated price after
-   refreshing the page.
-2. I can delete a plant and it is still gone when I refresh the page.
-
-### Endpoints for Advanced Deliverables
-
-#### PATCH /plants/:id
-
-Required Headers:
-
-```js
-{
-  "Content-Type": "application/json"
-}
-```
-
-Request Object:
-
-```json
-{
-  "price": number
-}
-```
-
-Example Response:
-
-```json
-{
-  "id": 1,
-  "name": "Aloe",
-  "image": "./images/aloe.jpg",
-  "price": 16.99
-}
-```
-
-#### DELETE /plants/:id
-
-Example Response:
-
-```json
-{}
-```
+### Author
+Basil Wabuke
+### License
+This project is licensed under the MIT License
