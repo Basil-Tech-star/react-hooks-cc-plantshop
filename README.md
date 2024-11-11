@@ -19,7 +19,12 @@ Plantsy is a simple React application that allows users to browse, add, update, 
 6. API Endpoints
 7. Styling
 8. Contributing
-9. License
+9. Fork the repository
+10. Technology used
+11. Deployment Live Lnk
+12. Author
+13. License
+
 ### Project Overview
 Plantsy is a catalog app where users can view and manage a list of plants. The main features include:
 
