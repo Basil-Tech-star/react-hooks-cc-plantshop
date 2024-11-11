@@ -163,4 +163,4 @@ https://react-hooks-cc-palantshop.netlify.app/
 ### Author
 Basil Wabuke
 ### License
-This project is licensed under the MIT License
+This project is licensed under the MIT License Copyright (c) 2024 Basil Wabuke
