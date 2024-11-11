@@ -41,6 +41,24 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Azalea",
+      "image": "https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/perfecto-mundo-epic-pink-azalea-reblooming-azalea-proven-winners_16758.jpg",
+      "price": 34.5,
+      "id": 8
+    },
+    {
+      "name": "Azalea",
+      "image": "https://www.gardendesign.com/pictures/images/900x705Max/dream-team-s-portland-garden_6/perfecto-mundo-epic-pink-azalea-reblooming-azalea-proven-winners_16758.jpg",
+      "price": 45.65,
+      "id": 9
+    },
+    {
+      "name": "",
+      "image": "",
+      "price": null,
+      "id": 10
     }
   ]
 }

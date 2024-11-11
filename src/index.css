@@ -130,6 +130,13 @@ input:focus {
   }
 }
 
+.delete {
+  background-color: red;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+
 @media (min-width: 1200px) {
   .card {
     width: calc(20% - 2rem);
