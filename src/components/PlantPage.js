@@ -3,8 +3,7 @@ import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage({ plants, isLoading, addPlant, searchPlants, updatePrice, deletePlant }) {
-  if (isLoading) return <p>Loading...</p>;
+function PlantPage({ plants, addPlant, searchPlants, updatePrice, deletePlant }) {
 
   return (
     <main>
