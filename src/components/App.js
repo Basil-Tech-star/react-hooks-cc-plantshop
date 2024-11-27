@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     // Fetch plants data from the API
-    fetch("http://localhost:6001/plants")
+    fetch("https://react-hooks-cc-plantshop-backend3.onrender.com/plants")
       .then((response) => response.json())
       .then((data) => {
         setPlants(data);
@@ -19,7 +19,7 @@ function App() {
 
   const addPlant = (newPlant) => {
     // POST the new plant to the server
-    fetch("http://localhost:6001/plants", {
+    fetch("https://react-hooks-cc-plantshop-backend3.onrender.com/plants", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function App() {
 
   const updatePrice = (id, newPrice) => {
     // PATCH request to update plant price
-    fetch(`http://localhost:6001/plants/${id}`, {
+    fetch(`https://react-hooks-cc-plantshop-backend3.onrender.com/plants/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ function App() {
 
   const deletePlant = (id) => {
     // DELETE request to remove a plant
-    fetch(`http://localhost:6001/plants/${id}`, {
+    fetch(`https://react-hooks-cc-plantshop-backend3.onrender.com/plants/${id}`, {
       method: "DELETE",
     })
       .then(() => {
